@@ -1,0 +1,40 @@
+.tarjeta {
+    width: 445px;
+    height: 550px;
+    background-image: linear-gradient(to right top, #41f4a6, #46d292, #48b17f, #46916c, #427259, #476d59, #4c6858, #506358, #62756a, #75897d, #889c90, #9cb0a4);
+    border-radius: 15px;
+    border-color: black;
+}
+
+img {
+    width: 320px;
+    filter: drop-shadow(5px 5px 3px black);
+}
+
+.parrafo {
+    font-family: Verdana;
+    font-size: 12px;
+    font-weight: bold;
+    text-align: initial;
+    color: #000000;
+}
+
+p {
+    font-family: verdana;
+    font-weight: bold;
+    color: #ffff;
+}
+
+.titulo {
+    background-image: linear-gradient(to right top, #000000, #0e0504, #160b04, #1a1103, #1a1703, #151b07, #0c1e0f, #002118, #002122, #00212b, #001f32, #041c35);
+    border-radius: 10px;
+    border-color: black;
+    font-size: 18px;
+    top: -3%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 255px;
+}
+img:hover{
+    transform: scale(1.15);
+}

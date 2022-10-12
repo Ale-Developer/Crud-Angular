@@ -1,0 +1,33 @@
+<div class="container mt-4">
+  <div class="card">
+    <div class="card-body">
+      <span class="h3">Empleados</span>
+      <button class="float-end btn btn-dark btn-lg" routerLink="/crear">Agregar</button>
+      <table class="table table-stripod mt-5">
+        <thead>
+          <tr>
+            <th scope="col">Nombre</th>
+            <th scope="col">Apellido</th>
+            <th scope="col">DNI</th>
+            <th scope="col">Salario</th>
+            <th scope="col"></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of items | async">
+            <td>{{item.nombre}}</td>
+            <td>{{item.apellido}}</td>
+            <td>{{item.dni}}</td>
+            <td>{{item.salario}}</td>
+            <td>
+              <button style="margin-right: 15px" class="btn btn-info btn-sm">
+                Editar
+              </button>
+              <button class="btn btn-danger btn-sm">Eliminar</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
