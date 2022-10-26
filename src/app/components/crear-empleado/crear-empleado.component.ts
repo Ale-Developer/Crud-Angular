@@ -1,5 +1,7 @@
+import { emitDistinctChangesOnlyDefaultValue } from '@angular/compiler';
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { ActivatedRoute, Router } from '@angular/router';
 import { EmpleadoService } from 'src/app/services/empleado.service';
 
 
@@ -12,15 +14,21 @@ import { EmpleadoService } from 'src/app/services/empleado.service';
 export class CrearEmpleadoComponent implements OnInit {
   crearEmpleado: FormGroup;
   submitted = false;
+  id: string | null;
+  titulo = 'CREAR EMPLEADO';
   
-  constructor(private fb: FormBuilder, private _empleadoService: EmpleadoService) {
+  constructor(private fb: FormBuilder, private _empleadoService: EmpleadoService, private router:Router, private aRoute: ActivatedRoute) {
     this.crearEmpleado = this.fb.group({
-      nombre: ['', Validators.required],
-      apellido: ['', Validators.required],
-      dni: ['', Validators.required],
-      salario: ['', Validators.required],
-    })
-   }
+    nombre: ['', Validators.required],
+    apellido: ['', Validators.required],
+    dni: ['', Validators.required],
+    salario: ['', Validators.required],
+
+  })
+  this.id = this.aRoute.snapshot.paramMap.get('id');
+ }
+ 
+
 
   ngOnInit(): void {
   }
@@ -38,10 +46,12 @@ export class CrearEmpleadoComponent implements OnInit {
     }
     console.log(empleado);
 
-    this._empleadoService.agregarEmpleado(empleado.then(()=>{
-      console.log("Cargado con éxito!!!")
-    }))
+    this._empleadoService.agregarEmpleado(empleado).then(()=>{
+      console.log("Cargado con éxito!!!");
+      this.router.navigate(['/lista']);
+    })
   }
+  edit(){
 
-
+  }
 }

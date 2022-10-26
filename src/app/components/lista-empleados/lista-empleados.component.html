@@ -14,11 +14,11 @@
           </tr>
         </thead>
         <tbody>
-          <tr *ngFor="let item of items | async">
-            <td>{{item.nombre}}</td>
-            <td>{{item.apellido}}</td>
-            <td>{{item.dni}}</td>
-            <td>{{item.salario}}</td>
+          <tr *ngFor="let empleado of empleados">
+            <td>{{empleado.nombre}}</td>
+            <td>{{empleado.apellido}}</td>
+            <td>{{empleado.dni}}</td>
+            <td>{{empleado.salario}}</td>
             <td>
               <button style="margin-right: 15px" class="btn btn-info btn-sm">
                 Editar
