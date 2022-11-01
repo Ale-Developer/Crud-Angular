@@ -22,5 +22,8 @@ export class EmpleadoService {
   actualizar(id: string, data:any): Promise<any>{
     return this.firestore.collection('items').doc(id).update(data);
   }
+  eliminar(id:string): Promise<any>{
+    return this.firestore.collection('items').doc(id).delete();
+  }
 }
 
