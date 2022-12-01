@@ -1,36 +1,75 @@
-<div class="container pt-4">
-    <div class="row">
-        <div class="col-lg-6 offset-lg-3">
-            <div class="card card-center">
-                <div class="card-body">
-                    <h3>
-                        {{titulo}}
-                    </h3>
-                </div>
-                <div *ngIf="submitted && crearEmpleado.invalid" class="alert alert-danger" role="alert">
-                    TODOS LOS CAMPOS SON OBLIGATORIOS
-                </div>
-                <form class="mt-4" [formGroup]="crearEmpleado" (ngSubmit)="botonEmpleado()">
-                    <div class="row">
-                        <div class="col">
-                            <input type="text" class="form-control form-control-lg" placeholder="Nombre" formControlName = "nombre">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control form-control-lg" placeholder="Apellido" formControlName = "apellido">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control form-control-lg" placeholder="DNI" formControlName = "dni">
-                        </div>
-                        <div class="col">
-                            <input type="text" class="form-control form-control-lg" placeholder="Salario" formControlName = "salario">
-                        </div>
-                        <div class="mt-3">
-                            <button type="text" style="margin-right: 13px" class="btn btn-secondary btn-lg" routerLink="/">Volver</button>
-                            <button type="submit" class="btn btn-secondary btn-lg">Crear</button>
-                        </div>
-                    </div>
-                </form>
-            </div>
+<div class="container pt-4 space">
+  <div class="row">
+    <div class="col-lg-6 offset-lg-3">
+      <div class="card card-center">
+        <div class="card-header">
+          <h3>
+            {{ titulo }}
+          </h3>
         </div>
+        <div class="card-body">
+          <div
+            *ngIf="submitted && crearEmpleado.invalid"
+            class="alert alert-danger"
+            role="alert"
+          >
+            TODOS LOS CAMPOS SON OBLIGATORIOS
+          </div>
+          <form
+            class="mt-4"
+            [formGroup]="crearEmpleado"
+            (ngSubmit)="botonEmpleado()"
+          >
+            <div class="row">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Nombre"
+                  formControlName="nombre"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Apellido"
+                  formControlName="apellido"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="DNI"
+                  formControlName="dni"
+                />
+              </div>
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control form-control-lg"
+                  placeholder="Salario"
+                  formControlName="salario"
+                />
+              </div>
+              <div class="mt-3">
+                <button
+                  type="text"
+                  style="margin-right: 13px"
+                  class="btn btn-primary btn-lg"
+                  routerLink="/"
+                >
+                  Volver
+                </button>
+                <button type="submit" class="btn btn-success btn-lg">
+                  Crear
+                </button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
     </div>
+  </div>
 </div>

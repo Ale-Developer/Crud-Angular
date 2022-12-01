@@ -1,1 +1,4 @@
-/* You can add global styles to this file, and also import other style files */
+.fondo{
+  background-image: linear-gradient(to right top, #000000, #181818, #292929, #3a3a3a, #4d4d4d, #5d5d5d, #6d6d6d, #7e7e7e, #909090, #a3a3a3, #b6b6b6, #c9c9c9);
+  height: 42rem;
+}

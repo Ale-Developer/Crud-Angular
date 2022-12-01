@@ -1,9 +1,14 @@
-<div class="container mt-4">
+<div *ngIf="!load">
+  <div class="spinner">
+    <img src="../../../assets/images/spinner.svg/">
+  </div>
+</div>
+<div *ngIf="load" class="container space">
   <div class="card">
-    <div class="card-body">
+    <div class="card-body posicion">
       <span class="h3">Empleados</span>
-      <button class="float-end btn btn-dark btn-lg" routerLink="/crear">Agregar</button>
-      <table class="table table-stripod mt-5">
+      <button class="float-end btn btn-dark btn-lg boton" routerLink="/crear">Agregar</button>
+      <table class="table table-dark table-striped mt-5">
         <thead>
           <tr>
             <th scope="col">Nombre</th>
@@ -28,6 +33,10 @@
           </tr>
         </tbody>
       </table>
+
     </div>
+
   </div>
+
 </div>
+

@@ -13,9 +13,13 @@ export class ListaEmpleadosComponent implements OnInit {
   constructor(private _empleadoService: EmpleadoService) {
 
    }
-
+  public load: Boolean = false;
   ngOnInit(): void {
     this.getEmpleados();
+    setTimeout(() => {
+      this.load = true;
+      }, 3000);
+
   }
 
   getEmpleados() {
